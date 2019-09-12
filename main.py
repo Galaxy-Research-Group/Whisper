@@ -4,15 +4,16 @@
 from chirpsdk import ChirpConnect, CallbackSet
 import os
 os.path.expanduser('~/.chirprc')
+import cryptography
 
 chirp = ChirpConnect()
 chirp.start(send=True, receive=True)
 
 # Sending data
 identifier = 'hello'
+# Send the data
 payload = bytearray([ord(ch) for ch in identifier])
 chirp.send(payload, blocking=True)
-
 
 # Receiving data
 class Callbacks(CallbackSet):
