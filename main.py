@@ -1,3 +1,6 @@
+# Implementing Chirp, information for it can be found:
+# https://developers.chirp.io
+
 from chirpsdk import ChirpConnect, CallbackSet
 import os
 os.path.expanduser('~/.chirprc')
